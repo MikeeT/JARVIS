@@ -1,0 +1,18 @@
+Help - This will toggle this text block
+exe 'name of application' - Open any computer program installed on your computer
+Available Programs to run
+    word
+    excel
+    onenote
+    outlook
+    vs
+    blend
+    minecraft
+    dj
+    settings
+    add shortname ~location
+web 'name of website' - This will open a website in your default web browser.
+You do not need to include the www. you do need to include .com or .net
+Calc app - This will open a simple calculator application
+Hide - This will minimize the window
+Quit - This will shut J.A.R.V.I.S. down
