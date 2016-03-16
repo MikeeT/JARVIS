@@ -80,7 +80,7 @@ public class JARVISGUI extends Application
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
             {
-                if (!newValue.equals(""))
+                if (!newValue.equals(oldValue))
                 {
                     Timer timer = new Timer();
                     timer.schedule(new TimerTask()
@@ -125,6 +125,8 @@ public class JARVISGUI extends Application
                             appname = inputLine.split(" ")[1].toLowerCase();
                             if(appname.equals("add"))
                             {
+                                //This will create a popup window that adds a new application
+                                //to the JARVIS exelocations.txt list
                                 Stage dialog = new Stage();
                                 dialog.initStyle(StageStyle.UTILITY);
                                 BorderPane dialogborder = new BorderPane();
@@ -163,7 +165,7 @@ public class JARVISGUI extends Application
                                 });
                                 dialogborder.setBottom(ok);
 
-                                //set the stage
+                                //set the dialog
                                 dialog.setScene(new Scene( dialogborder, 300, 100 ));
                                 dialog.setResizable(false);
                                 dialog.show();
@@ -181,6 +183,7 @@ public class JARVISGUI extends Application
                         }
                     }
                     else if (command.toLowerCase().equals("web"))
+                    //opens default browser to specified website
                     {
                         String web = "";
                         try {
@@ -195,14 +198,17 @@ public class JARVISGUI extends Application
                         }
                     }
                     else if (command.toLowerCase().equals("calc"))
+                    //solves a math problem
                     {
                         JARVIS.setText(calc.Solve(inputLine.split(" ")[1]));
                     }
                     else if (command.toLowerCase().equals("hide"))
+                    //minimizes the JARVIS window
                     {
                         primaryStage.setIconified(true);
                     }
                     else if (command.toLowerCase().equals("quit") || command.toLowerCase().equals("exit"))
+                    //ends the application
                     {
                         JARVIS.setVisible(false);
                         text.setVisible(false);
